@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<map version="1.0" orientation="orthogonal" width="18" height="11" tilewidth="96" tileheight="96">
+  <properties>
+    <property name="Title" value="25"/>
+  </properties>
+  <tileset source="Sokoban.tsx" firstgid="1"/>
+  <layer name="Tile Layer 1" width="18" height="11">
+    <data compression="zlib" encoding="base64">eJyVkksKACAIRE0Nuv+JIyiIwe/iMQtjRlMmIi4iQFaPGBfP59U10d8HvTAnUw18DvO+rag1F0NOpx+LTj/WXwn1+jm6nN0JZFT2Zt0S7qxK91YzNvHSAeY=</data>
+  </layer>
+</map>
