@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="11" height="11" tilewidth="96" tileheight="96" infinite="0" nextlayerid="2" nextobjectid="1">
+ <properties>
+  <property name="Title" value="0"/>
+ </properties>
+ <tileset firstgid="1" source="Sokoban.tsx"/>
+ <tileset firstgid="9" source="../sokoban/levels/Sokoban.tsx"/>
+ <layer id="1" name="Tile Layer 1" width="11" height="11">
+  <data encoding="base64" compression="zlib">
+   eJx9kTEOwCAMA0OiDkgd+P9r2wGkkxUz3OI4BkNGRG4K5IXjGfBWs0/fkLnTJmaK7h7/xLzLZba7A7tRfzbvzzLdCl7VNNN16s6/+bo3d//3ATBjAUA=
+  </data>
+ </layer>
+</map>
