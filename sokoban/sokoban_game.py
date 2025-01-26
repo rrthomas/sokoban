@@ -78,27 +78,22 @@ Push the diamonds on to the targets.
                         Tile.FLOOR if block == Tile.HERO else Tile.TARGET,
                     )
 
-    def can_move(self, velocity: Vector2) -> bool:
-        newpos = self.hero.position + velocity
+    def try_move(self, delta: Vector2) -> bool:
+        newpos = self.hero.position + delta
         block = self.get(newpos)
         if block in (Tile.FLOOR, Tile.TARGET):
             return True
         if block in (Tile.DIAMOND, Tile.DIAMOND_ON_TARGET):
-            new_rockpos = self.hero.position + velocity * 2
-            return self.get(new_rockpos) in (Tile.FLOOR, Tile.TARGET)
-        return False
-
-    def do_play(self) -> None:
-        newpos = self.hero.position + self.hero.velocity
-        block = self.get(newpos)
-        if block in (Tile.DIAMOND, Tile.DIAMOND_ON_TARGET):
-            new_diamond_pos = newpos + self.hero.velocity
+            new_diamond_pos = newpos + delta
             new_pos_block = self.get(new_diamond_pos)
-            self.set(
-                new_diamond_pos,
-                Tile.DIAMOND if new_pos_block == Tile.FLOOR else Tile.DIAMOND_ON_TARGET,
-            )
-            self.set(newpos, Tile.FLOOR if block == Tile.DIAMOND else Tile.TARGET)
+            if new_pos_block in (Tile.FLOOR, Tile.TARGET):
+                self.set(
+                    new_diamond_pos,
+                    Tile.DIAMOND if new_pos_block == Tile.FLOOR else Tile.DIAMOND_ON_TARGET,
+                )
+                self.set(newpos, Tile.FLOOR if block == Tile.DIAMOND else Tile.TARGET)
+                return True
+        return False
 
     def show_status(self) -> None:
         self.print_screen(
